@@ -121,12 +121,16 @@ document.addEventListener('click', jump);
 
 //Parte inferior
 
-const opcoesTerReposta = ["Selecione","FICOU DE AVALIAR E RETORNAR", "NEGADA POR CRÉDITO", "JA FOI OFERTADO/RECUSADO ANTES", "FIDELIZADO EM OUTRA OPERADORA", "OFERTA POUCO ATRATIVA", "NÃO GOSTA DA OI", "OUTROS","VENDA CONVERTIDA"];
+const opcoesTerReposta = ["Selecione","FICOU DE AVALIAR E RETORNAR", "NEGADA POR CRÉDITO", "JA FOI OFERTADO/RECUSADO ANTES", "FIDELIZADO EM OUTRA OPERADORA", "OFERTA POUCO ATRATIVA", "NÃO GOSTA DA OI", "OUTROS"];
 const meuselect = document.querySelector('#terResposta');
 
 opcoesTerReposta.forEach((elem, val)=> {
     meuselect.appendChild(new Option(elem, val)).setAttribute('id','radio'+(val+7));
 })
+
+const priPergunta = document.querySelector('.radios');
+const segPergunta = document.querySelector('.segPergunta');
+const terPergunta = document.querySelector('.terPergunta');
 
 function elemento() {            
     // const solo = document.querySelector('#solo');
@@ -186,10 +190,6 @@ function elemento() {
     //location.reload();
     //}, 5000);
 
-const priPergunta = document.querySelector('.radios');
-    const segPergunta = document.querySelector('.segPergunta');
-    const terPergunta = document.querySelector('.terPergunta');
-
     priPergunta.setAttribute('hidden','');
     segPergunta.setAttribute('hidden','');
     terPergunta.setAttribute('hidden','');
@@ -203,11 +203,7 @@ const priPergunta = document.querySelector('.radios');
         case 2:
             switch(aleatorioInteiro(1,3)) {
                 case 1:
-                    document.querySelector('#radio1').checked = true;
-                    segPergunta.removeAttribute('hidden');
-                    document.querySelector('#radio7').checked = true;
-                    terPergunta.removeAttribute('hidden');
-                    document.querySelector('#radio9').selected = true;
+                    terResp('#radio9');
                 break;
                 case 2:
                     document.querySelector('#radio2').checked = true;
@@ -215,63 +211,33 @@ const priPergunta = document.querySelector('.radios');
                 case 3:
                     switch (aleatorioInteiro(1,3)) {
                         case 1:
-                            document.querySelector('#radio1').checked = true;
-                            segPergunta.removeAttribute('hidden');
-                            document.querySelector('#radio7').checked = true;
-                            terPergunta.removeAttribute('hidden');
-                            document.querySelector('#radio11').selected = true;
+                            terResp('#radio11');
                         break;
                         case 2:
-                            document.querySelector('#radio1').checked = true;
-                            segPergunta.removeAttribute('hidden');
-                            document.querySelector('#radio6').checked = true;
+                            segResp('#radio6');
                         break;
                         case 3:
                             switch(aleatorioInteiro(1,7)) {
                                 case 1:
-                                    document.querySelector('#radio1').checked = true;
-                                    segPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio7').checked = true;
-                                    terPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio8').selected = true;
+                                    terResp('#radio8');
                                 break;
                                 case 2:
                                     document.querySelector('#radio4').checked = true;
                                 break;
                                 case 3:
-                                    document.querySelector('#radio1').checked = true;
-                                    segPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio7').checked = true;
-                                    terPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio10').selected = true;
+                                    terResp('#radio10');
                                 break;
                                 case 4:
-                                    document.querySelector('#radio1').checked = true;
-                                    segPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio7').checked = true;
-                                    terPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio15').selected = true;
+                                    segResp('#radio5');
                                 break;
                                 case 5:
-                                    document.querySelector('#radio1').checked = true;
-                                    segPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio7').checked = true;
-                                    terPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio12').selected = true;
+                                    terResp('#radio12');
                                 break;
                                 case 6:
-                                    document.querySelector('#radio1').checked = true;
-                                    segPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio7').checked = true;
-                                    terPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio13').selected = true;
+                                    terResp('#radio13');
                                 break;
                                 case 7:
-                                    document.querySelector('#radio1').checked = true;
-                                    segPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio7').checked = true;
-                                    terPergunta.removeAttribute('hidden');
-                                    document.querySelector('#radio14').selected = true;
+                                    terResp('#radio14');
                                 break;
                             }
                         break;
@@ -281,14 +247,28 @@ const priPergunta = document.querySelector('.radios');
         break;            
     }
 
-    }
+}
 
-    function aleatorioInteiro(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+function aleatorioInteiro(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-    var recarregaPagina = window.setInterval(function(){
-        elemento();
-    }, 5000);
+var recarregaPagina = window.setInterval(function(){
+    elemento();
+}, 5000);
+
+function terResp (resRadio1) {
+    document.querySelector('#radio1').checked = true;
+    segPergunta.removeAttribute('hidden');
+    document.querySelector('#radio7').checked = true;
+    terPergunta.removeAttribute('hidden');
+    document.querySelector(resRadio1).selected = true;
+}
+
+function segResp (resRadio2) {
+    document.querySelector('#radio1').checked = true;
+    segPergunta.removeAttribute('hidden');
+    document.querySelector(resRadio2).checked = true;
+}
