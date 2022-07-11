@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="./js/scrpt.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Roteirizacao</title>
+</head>
+<body>    
+    
+    <div class="game-board">        
+        
+
+        <img src="./imagens/clouds.png" class="clouds">
+        <img src="./imagens/clouds.png" class="clouds-reverse">
+        <img src="./imagens/pipe.png" class="pipe">
+        <img src="./imagens/mario.gif" class="mario">
+
+    </div>
+    <!-- <div class="fundo">
+        <div class="texto-inferior">
+            <button onclick="elemento()">FOI ATENDIDO?</button>
+            <br><br>
+            <p id="solo"></p>
+        </div>
+    </div> -->
+    <div class="breadcrumbs">
+        <h4><button id="priPergunta" onClick = elemento()>Foi Atendido?</button></h4>
+        <!-- <div class="seta"></div><br> -->
+        <div class="radios" hidden>
+            <label>
+                <input type="radio" name="priResposta" id="radio1"> SIM (DECISOR)
+            </label><br>
+            <label>
+                <input type="radio" name="priResposta" id="radio2"> SIM (NÃO DECISOR)&nbsp;&nbsp;&nbsp;
+            </label>
+            <label>
+                <input type="radio" name="priResposta" id="radio3"> NÃO
+            </label><br>
+            <label>
+                <input type="radio" name="priResposta" id="radio4"> ENDEREÇO NÃO ENCONTRADO
+            </label><br><br>
+            <div class="segPergunta" hidden>
+                <h4>A venda foi convertida?</h4>
+                <!-- <div class="seta"></div><br> -->
+                <div class="segResposta">
+                    <label>
+                        <input type="radio" name="segResposta" id="radio5"> SIM
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" name="segResposta" id="radio7"> NÃO
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" name="segResposta" id="radio6"> NEGOCIAÇÃO
+                    </label><br><br>
+                    <!-- <div class="seta"></div><br> -->
+                    <div class="terPergunta" hidden>
+                        <h4>Motivos de Não Venda</h4>
+                        <div class="terResposta">
+                            <select id="terResposta"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+</body>
+</html>
