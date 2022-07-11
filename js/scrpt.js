@@ -255,9 +255,9 @@ function aleatorioInteiro(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var recarregaPagina = window.setInterval(function(){
-    elemento();
-}, 5000);
+// var recarregaPagina = window.setInterval(function(){
+//     elemento();
+// }, 5000);
 
 function terResp (resRadio1) {
     document.querySelector('#radio1').checked = true;

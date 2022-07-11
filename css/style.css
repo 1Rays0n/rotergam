@@ -104,7 +104,7 @@ button {
     border-radius: 5px;
     width: 100%;
     max-width: 350px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     align-items: center;
 }
 
@@ -115,12 +115,22 @@ button {
     letter-spacing: 0.8px;
 }
 
+.segPergunta {
+    margin: 10px;
+}
+
 .segResposta {
-    margin: 10px 0 10px 40px;
+    margin: 5px 0 10px 40px;
+}
+
+.terPergunta {
+    margin: 10px;
 }
 
 #terResposta {
     margin: 5px;
     border: none;
+    font-size: 1em;
+    box-sizing: ;    
 }
 
